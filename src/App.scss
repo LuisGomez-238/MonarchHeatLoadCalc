@@ -1,0 +1,110 @@
+/* Base styles for larger screens (default) */
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.76);
+  background-image: url('/monarchLogo.jpg'); /* Correct path to the image */
+  background-attachment: fixed;
+  background-position: calc(50% + 2rem) center;
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  min-height: 100vh; /* Ensure the background covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px; /* Adjust the width if necessary */
+  margin-top: 2rem; /* Adds some space at the top */
+}
+
+.CustomerInfo {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  input {
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+}
+
+.Calculator {
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  select {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+
+  select:hover {
+    cursor: pointer;
+  }
+
+  input {
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  body {
+    padding: .5rem; /* Reduce padding on smaller screens */
+    background-position: calc(50% + 1rem) center;
+  }
+
+  .App {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem; /* Less space at the top */
+  }
+
+  .CustomerInfo input {
+    margin-bottom: 0.25rem;
+    padding: 0.25rem;
+  }
+
+  .Calculator select, .Calculator input {
+    padding: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem; /* Further reduce padding on very small screens */
+    background-position: calc(50% + 1rem) center;
+
+  }
+
+  .App {
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin-top: 0.5rem; /* Less space at the top */
+  }
+
+  .CustomerInfo input {
+    margin-bottom: 0.2rem;
+    padding: 0.2rem;
+  }
+
+  .Calculator select, .Calculator input {
+    padding: 0.2rem;
+  }
+}
