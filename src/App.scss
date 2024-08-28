@@ -15,8 +15,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* Position relative for child positioning */
 }
 
+/* Footer positioning */
+footer {
+  color: black;
+  font-size: 10px;
+  display: flex;
+  position: absolute; /* Position the footer absolutely within the body */
+  bottom: 0; /* Stick to the bottom of the viewport */
+  right: 0; /* Stick to the left edge of the viewport */
+  background: rgba(255, 255, 255, 0.8); /* Light background for visibility */
+  width: 100%; /* Ensure the footer spans the full width */
+  text-align: right; /* Align text to the right */
+  padding: 0.5rem; /* Add some padding to the footer */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Make sure the App has enough margin to keep space for the footer */
 .App {
   background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay */
   padding: 2rem;
@@ -24,7 +41,12 @@ body {
   width: 100%;
   max-width: 800px; /* Adjust the width if necessary */
   margin-top: 2rem; /* Adds some space at the top */
+  margin-bottom: 4rem; /* Ensure space between .App and footer */
+  position: relative; /* Ensure .App is above the footer */
+  z-index: 1; /* Ensure .App is above the footer */
 }
+
+/* Styles for the CustomerInfo and Calculator components remain unchanged */
 
 .CustomerInfo {
   color: white;
@@ -74,6 +96,7 @@ body {
     padding: 1rem;
     border-radius: 5px;
     margin-top: 1rem; /* Less space at the top */
+    margin-bottom: 2rem; /* Space between .App and footer */
   }
 
   .CustomerInfo input {
@@ -90,13 +113,13 @@ body {
   body {
     padding: 0.5rem; /* Further reduce padding on very small screens */
     background-position: calc(50% + 1rem) center;
-
   }
 
   .App {
     padding: 0.5rem;
     border-radius: 3px;
     margin-top: 0.5rem; /* Less space at the top */
+    margin-bottom: 2rem; /* Space between .App and footer */
   }
 
   .CustomerInfo input {
