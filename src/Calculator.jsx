@@ -21,7 +21,10 @@ function Calculator({ squareFootage }) {
         const kitchenContribution = parseFloat(kitchen) || 0;
         const peopleContribution = parseFloat(people) || 0;
 
-        const totalHeatLoad = wallContribution + floorContribution + ductsContribution + ceilingContribution + windowsContribution * baseHeatLoad + kitchenContribution + peopleContribution;
+        // const totalHeatLoad = wallContribution + floorContribution + ductsContribution + ceilingContribution + windowsContribution * baseHeatLoad + kitchenContribution + peopleContribution;
+        const totalHeatLoad = (
+            (wallContribution + floorContribution + ductsContribution + windowsContribution) * baseHeatLoad
+          ) + kitchenContribution + peopleContribution;
 
 
         setHeatLoad(`Total Estimated Heat Load: ${totalHeatLoad.toFixed(2)} BTU/hr`);
